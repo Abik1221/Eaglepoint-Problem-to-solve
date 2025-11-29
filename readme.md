@@ -59,12 +59,6 @@ To ensure I was following best practices, I consulted:
    go run main.go
    ```
 
-   **Task 2:**
-   ```bash
-   cd task_2
-   go run main.go
-   ```
-
    **Task 3:**
    ```bash
    cd task_3

@@ -63,3 +63,6 @@ I needed a way to track *exactly* when requests happened to enforce the limit ac
 *   **Thread Safety**: It uses fine-grained locking (per-user mutexes). This is critical for performance in a real server.
 *   **Self-Cleaning**: We don't need a background "garbage collector" goroutine to clean up old timestamps. We do it lazily every time we check a user.
 *   **Simplicity**: It achieves complex behavior (sliding window) with standard Go slices and time math.
+
+
+check for the flow chart image in this folder 

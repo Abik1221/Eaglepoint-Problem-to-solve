@@ -52,3 +52,6 @@ I initially thought about calculating the "Average Word Length" by iterating thr
 5.  **Final Calculation**:
     *   Calculated average: `totalLetters / wordCount`.
     *   Rounding: Used `int(val * 100) / 100.0` to truncate to 2 decimal places as requested.
+
+
+check for the flow chart image in this folder 

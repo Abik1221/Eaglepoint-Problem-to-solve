@@ -1,4 +1,4 @@
-# Eagle Point AI Entrance Test
+# Eagle Point AI test for coding challenge code submision doc
 
 **Author:** Nahom Keneni  
 **Project:** Coding Challenge Solutions

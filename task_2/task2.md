@@ -54,12 +54,3 @@ I considered two approaches for the retry mechanism:
     *   Used `time.Sleep(time.Second)` to pause execution.
 4.  **Final Return**:
     *   If the loop finishes without returning, it means all attempts failed. I return a formatted error message: `fmt.Errorf("gave up after %d tries: %s", ...)` so the user knows exactly what happened.
-
-
-
-## Why this solution is best
-
-*   **Simplicity**: It uses standard control flow (`for`, `if`). No channels or complex concurrency primitives were needed for this specific requirement (though they could be added if we wanted to cancel the request).
-*   **Readability**: The logic is linear. You can read it from top to bottom and understand exactly what happens.
-*   **Correctness**: It strictly follows the requirements (1s wait, max retries, return error at end).
-*   **Testability**: By separating `callAPI` (the "unreliable" part) from `fetch` (the logic part), we could easily swap in a real API later.

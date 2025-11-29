@@ -18,7 +18,8 @@ Before starting, I researched the most efficient ways to handle string manipulat
     *   *Goal:* Check if I needed to sort keys for the output.
     *   *Result:* Go map iteration is random. Since the requirement didn't specify sorted output, I left it as is, but noted that `json.Marshal` sorts keys alphabetically by default, which is a nice bonus.
 
-
+* and for the flowchart I have used drawio.com
+* 
 ## Thought Process
 
 ### Why this approach?
@@ -54,4 +55,4 @@ I initially thought about calculating the "Average Word Length" by iterating thr
     *   Rounding: Used `int(val * 100) / 100.0` to truncate to 2 decimal places as requested.
 
 
-check for the flow chart image in this folder 
+check for the flow chart image that i design using draw.io in this folder 

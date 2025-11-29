@@ -1,4 +1,4 @@
-# Task 1: Smart Text Analyzer - Documentation
+#  Smart Text Analyzer 
 
 ## Search Log & References
 
@@ -18,7 +18,6 @@ Before starting, I researched the most efficient ways to handle string manipulat
     *   *Goal:* Check if I needed to sort keys for the output.
     *   *Result:* Go map iteration is random. Since the requirement didn't specify sorted output, I left it as is, but noted that `json.Marshal` sorts keys alphabetically by default, which is a nice bonus.
 
----
 
 ## Thought Process
 
@@ -35,7 +34,6 @@ I considered two main approaches:
 I initially thought about calculating the "Average Word Length" by iterating through the map of frequencies.
 *   *Correction:* That would be inaccurate because it would count unique words, not total words. I realized I needed to sum the length of *every* word as I processed the input list, not the unique map.
 
----
 
 ## Step-by-Step Solution
 
@@ -54,12 +52,3 @@ I initially thought about calculating the "Average Word Length" by iterating thr
 5.  **Final Calculation**:
     *   Calculated average: `totalLetters / wordCount`.
     *   Rounding: Used `int(val * 100) / 100.0` to truncate to 2 decimal places as requested.
-
----
-
-## Why this solution is best
-
-*   **Performance**: It runs in **O(N)** time complexity. We touch each character of the input string only a few times (split, lower, count).
-*   **Memory**: We only store the unique words in the map and the slice of words. `strings.Fields` shares the backing array where possible (though it does allocate for the slice).
-*   **Readability**: The code reads like English. "For each word in words..."
-*   **Robustness**: It handles edge cases like empty strings, multiple spaces, and mixed casing correctly.

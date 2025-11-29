@@ -20,7 +20,7 @@ I researched different rate limiting algorithms and concurrency patterns in Go t
     *   *Result:* `time.Now().Add(-window)` gives the "cutoff" time. Any timestamp before this is expired.
     *   *URL:* [pkg.go.dev/time#Time.Add](https://pkg.go.dev/time#Time.Add)
 
----
+
 
 ## Thought Process
 
@@ -39,7 +39,7 @@ I needed a way to track *exactly* when requests happened to enforce the limit ac
     *   *Flaw:* Slightly more complex to implement "per 60 seconds" exactly without background timers.
     *   *Decision:* Rejected for this specific "N reqs / M time" requirement.
 
----
+
 
 ## Step-by-Step Solution
 
@@ -55,7 +55,7 @@ I needed a way to track *exactly* when requests happened to enforce the limit ac
     *   **Step 4 (Check)**: If `len(requests) < maxReqs`, we're good. Append `time.Now()` and return `true`.
     *   **Step 5 (Block)**: If `len(requests) >= maxReqs`, return `false`.
 
----
+
 
 ## Why this solution is best
 

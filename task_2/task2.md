@@ -19,7 +19,7 @@ I researched standard patterns for handling retries and timeouts in Go to ensure
     *   *Result:* `time.Sleep(1 * time.Second)`. It's important to multiply by `time.Second` because the argument is a `Duration` (nanoseconds), not just an integer.
     *   *URL:* [pkg.go.dev/time#Sleep](https://pkg.go.dev/time#Sleep)
 
----
+
 
 ## Thought Process
 
@@ -36,7 +36,7 @@ I considered two approaches for the retry mechanism:
 *   **Exponential Backoff**: Instead of waiting 1s, wait 1s, then 2s, then 4s.
     *   *Decision:* The requirements specifically asked for "Waits 1 second between retries", so I stuck to the constant backoff to meet the spec exactly.
 
----
+
 
 ## Step-by-Step Solution
 
@@ -55,7 +55,7 @@ I considered two approaches for the retry mechanism:
 4.  **Final Return**:
     *   If the loop finishes without returning, it means all attempts failed. I return a formatted error message: `fmt.Errorf("gave up after %d tries: %s", ...)` so the user knows exactly what happened.
 
----
+
 
 ## Why this solution is best
 

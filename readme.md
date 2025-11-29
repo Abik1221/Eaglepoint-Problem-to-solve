@@ -13,11 +13,6 @@ A function that analyzes text to extract metrics like word count, average length
 - **Code:** `task_1/main.go`
 - **Documentation:** [Read the approach](./task_1/task1.md)
 
-### [Task 2: Async Data Fetcher](./task_2)
-An async data fetcher with robust retry logic to handle network failures gracefully.
-- **Code:** `task_2/main.go`
-- **Documentation:** [Read the approach](./task_2/task2.md)
-
 ### [Task 3: Rate Limiter](./task_3)
 A custom rate limiter implementation that restricts user requests within a specific time window.
 - **Code:** `task_3/main.go`

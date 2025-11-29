@@ -1,4 +1,4 @@
-# Task 2: Async Data Fetcher with Retry - Documentation
+# Async Data Fetcher with Retry
 
 ## Search Log & References
 
